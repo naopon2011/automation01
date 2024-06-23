@@ -26,6 +26,11 @@ module "cc_vm" {
   mgmt_security_group_id    = aws_security_group.sg.id
   service_security_group_id = aws_security_group.sg.id
   tag = var.vpc_name
+
+  depends_on = [
+    local_file.user_data_file,
+    null_resource.cc_error_checker,
+  ]
 }
 
 module "cc_iam" {
