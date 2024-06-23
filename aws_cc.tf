@@ -26,6 +26,15 @@ module "cc_vm" {
   mgmt_security_group_id    = aws_security_group.sg.id
   service_security_group_id = aws_security_group.sg.id
   tag = var.vpc_name
+  ebs_volume_type           = var.ebs_volume_type
+  ebs_encryption_enabled    = var.ebs_encryption_enabled
+  byo_kms_key_alias         = var.byo_kms_key_alias
+
+
+  depends_on = [
+    local_file.user_data_file,
+    null_resource.cc_error_checker,
+  ]
 }
 
 module "cc_iam" {
