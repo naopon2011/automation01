@@ -35,7 +35,7 @@ variable "win_instance_type" {
 variable "ac_ami" {
   description = "App Connectorのami"
   type        = string
-  default     = "ami-05b60713705a935c2"
+  default     = "ami-0c1948123e1d99a8a"
 }
 
 variable "ac_instance_type" {
@@ -47,7 +47,7 @@ variable "ac_instance_type" {
 variable "cc_ami" {
   description = "Cloud Connectorのami"
   type        = string
-  default     = "ami-0854c366a1edc5c3a"
+  default     = "ami-09db530e8a9188750"
 }
 
 variable "cc_instance_type" {
